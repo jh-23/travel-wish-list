@@ -34,7 +34,7 @@ class AllDestinations(Resource):
     
     def get(self):
         
-        destination_list = [destination.to_dict() for destination in Destination.query.all()]
+        destination_list = [destination.to_dict(only=('id', 'city', 'state', 'country', 'image')) for destination in Destination.query.all()]
         
         response = make_response(
             destination_list,
@@ -45,8 +45,30 @@ class AllDestinations(Resource):
     
 api.add_resource(AllDestinations, '/alldestinations')
 
-
+class ActivityByDestination(Resource):
     
+    def get(self, id):
+        
+        destination = Destination.query.filter_by(id=id).first()
+        
+        if not destination:
+            return make_response({'error': 'Destination not found'}, 404)
+        
+        activity_destinations = ActivityDestination.query.filter_by(destination_id=id).all()
+        
+        response_list = [activity_destination.activity.to_dict(only=('id', 'activity_name', 'activity_description', 'activity_image')) for activity_destination in activity_destinations]
+        
+        response = make_response(
+            response_list,
+            200
+        )
+        
+        return response
+    
+api.add_resource(ActivityByDestination, '/activitybydestination/<int:id>')
+
+
+   
     
     
     

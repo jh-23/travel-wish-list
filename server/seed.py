@@ -126,3 +126,4 @@ if __name__ == '__main__':
         activities_to_add.append(activity_4)
         db.session.add_all(activities_to_add)
         
+        db.session.commit()

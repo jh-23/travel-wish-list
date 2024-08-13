@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Switch, Route } from "react-router-dom";
+import NavBar from "./NavBar";
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
   return (
     <div className="App">
       <header>
+        <h1>Travel Wish List</h1>
         <NavBar />
       </header>
 

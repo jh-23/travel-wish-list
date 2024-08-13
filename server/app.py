@@ -43,7 +43,32 @@ class AllDestinations(Resource):
         
         return response 
     
-api.add_resource(AllDestinations, '/alldestinations')
+    def post(self):
+        
+        json = request.get_json()
+        
+        user = User.query.filter(User.id == session['user_id']).first()
+        
+        new_destination = Destination(
+            city = json.get('city'),
+            state = json.get('state'),
+            country = json.get('country'),
+            image = json.get('image')
+        )
+        
+        db.session.add(new_destination)
+        db.session.commit()
+        
+        response_dict = new_destination.to_dict()
+        
+        response = make_response(
+            response_dict,
+            201
+        )
+    
+        return response
+    
+api.add_resource(AllDestinations, '/all_destinations')
 
 class ActivityByDestination(Resource):
     
@@ -67,13 +92,51 @@ class ActivityByDestination(Resource):
     
 api.add_resource(ActivityByDestination, '/activity_by_destination/<int:id>')
 
-class UserActivitiesByID(Resource):
+class Activities(Resource):
+    
+    def get(self):
+        
+        activity_list = [activity.to_dict(only=('id', 'activity_name', 'activity_description', 'activity_image')) for activity in Activity.query.all()]
+        
+        response = make_response(
+            activity_list,
+            200
+        )
+        
+        return response
+    
+    def post(self):
+        
+        json = request.get_json()
+        
+        new_activity = Activities(
+            activity_name = json.get('activity_name'),
+            activity_description = json.get('activity_description'),
+            activity_image = json.get('activity_image')
+        )
+        
+        db.session.add(new_activity)
+        db.session.commit()
+        
+        response_dict = new_activity.to_dict()
+        
+        response = make_response(
+            response_dict,
+            201
+        )
+        
+        return response
+        
+api.add_resource(Activities, '/all_activities')
+
+
+class ActivityByID(Resource):
     
     def patch(self, id):
         
         json = request.get_json()
-        
-        activity = Activity.query.filter_by(id=id).first()
+    
+        activity = Activity.query.filter(Activity.id == id).first()
         
         for attr in json:
             setattr(activity, attr, json[attr])
@@ -86,7 +149,14 @@ class UserActivitiesByID(Resource):
             200
         )
         
-        return response 
+        return response
+
+api.add_resource(ActivityByID, '/activity/<int:id>')
+    
+        
+        
+
+class UserActivitiesByID(Resource):
     
     
     def delete(self, id):

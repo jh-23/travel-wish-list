@@ -65,7 +65,48 @@ class ActivityByDestination(Resource):
         
         return response
     
-api.add_resource(ActivityByDestination, '/activitybydestination/<int:id>')
+api.add_resource(ActivityByDestination, '/activity_by_destination/<int:id>')
+
+class UserActivitiesByID(Resource):
+    
+    def patch(self, id):
+        
+        json = request.get_json()
+        
+        activity = Activity.query.filter_by(id=id).first()
+        
+        for attr in json:
+            setattr(activity, attr, json[attr])
+            
+        db.session.add(activity)
+        db.session.commit()
+        
+        response = make_response(
+            activity.to_dict(),
+            200
+        )
+        
+        return response 
+    
+    
+    def delete(self, id):
+    
+        activity = Activity.query.filter_by(id=id).first()
+        
+        if not activity:
+            return {'message': 'Activity not found'}, 404
+        
+        db.session.delete(activity)
+        db.session.commit()
+        
+        response = make_response(
+            {'message': 'successful deletion of activity'},
+            202
+        )
+        
+        return response 
+    
+api.add_resource(UserActivitiesByID, '/user_activities/<int:id>')
 
 
    

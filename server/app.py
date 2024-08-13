@@ -150,22 +150,10 @@ class ActivityByID(Resource):
         )
         
         return response
-
-api.add_resource(ActivityByID, '/activity/<int:id>')
-    
-        
-        
-
-class UserActivitiesByID(Resource):
-    
     
     def delete(self, id):
-    
+        
         activity = Activity.query.filter_by(id=id).first()
-        
-        if not activity:
-            return {'message': 'Activity not found'}, 404
-        
         db.session.delete(activity)
         db.session.commit()
         
@@ -174,17 +162,10 @@ class UserActivitiesByID(Resource):
             202
         )
         
-        return response 
-    
-api.add_resource(UserActivitiesByID, '/user_activities/<int:id>')
+        return response
 
-
-   
+api.add_resource(ActivityByID, '/activity/<int:id>')
     
-    
-    
-
-
 
 
 class Login(Resource):

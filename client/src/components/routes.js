@@ -1,6 +1,7 @@
 import App from "./App";
 import Destinations from "./Destinations";
 import Home from "./Home";
+import LoginForm from "./LoginForm";
 
 const routes = [
 
@@ -15,7 +16,12 @@ const routes = [
     {
         path: "/destinations",
         element: <Destinations />
+    },
+    {
+        path:"/login",
+        element: <LoginForm />
     }
+
 ]
 
 export default routes;

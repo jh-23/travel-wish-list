@@ -34,6 +34,7 @@ function NewDestinationForm() {
         <div className='new-destination-form'>
             <br />
             <form onSubmit={handleSubmit} >
+                <h1> Travel Wish List App</h1>
                 <h4> Add New Destination: </h4>
                 <br />
 

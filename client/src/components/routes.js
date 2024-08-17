@@ -5,6 +5,7 @@ import LoginForm from "./LoginForm";
 import Logout from "./Logout";
 import Activities from "../Activities";
 import NewDestinationForm from "./NewDestinationForm";
+import NewActivityForm from "../NewActivityForm";
 
 const routes = [
 
@@ -33,8 +34,12 @@ const routes = [
         element: <Activities />
     },
     {
-        path:"/newdestinationform",
+        path: "/newdestinationform",
         element: <NewDestinationForm />
+    },
+    {
+        path: "/newactivityform",
+        element: <NewActivityForm />
     }
 
 ]

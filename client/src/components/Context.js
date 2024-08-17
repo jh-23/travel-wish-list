@@ -15,13 +15,24 @@ function ContextProvider({ children }) {
     const [country, setCountry] = useState("");
     const [image, setImage] = useState("");
 
+    const [activityName, setActivityName] = useState("");
+    const [activityDescription, setActivityDescription] = useState("");
+    const [activityImage, setActivityImage] = useState("");
+
     function addDestination(newDestination) {
         const updatedDestinationList = [...destinations, newDestination]
         setDestinations(updatedDestinationList)
     }
 
+    function addActivity(newActivity) {
+        const updatedActivityList = [...activities, newActivity]
+        setActivityDescription(updatedActivityList)
+    }
+
+
+
     return(
-        <Context.Provider value={{ username, setUsername, password, setPassword, user, setUser, errors, setErrors, isLoading, setIsLoading, destinations, setDestinations, activities, setActivities, city, setCity, state, setState, country, setCountry, image, setImage, addDestination }}>
+        <Context.Provider value={{ username, setUsername, password, setPassword, user, setUser, errors, setErrors, isLoading, setIsLoading, destinations, setDestinations, activities, setActivities, city, setCity, state, setState, country, setCountry, image, setImage, addDestination, activityName, setActivityName, activityDescription, setActivityDescription, activityImage, setActivityImage, addActivity }}>
             {children}
         </Context.Provider>
     )

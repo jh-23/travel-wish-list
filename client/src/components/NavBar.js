@@ -31,7 +31,7 @@ function NavBar() {
                     New Destination
                     </NavLink>
                     <NavLink
-                    to="/newactivity"
+                    to="/newactivityform"
                     className="nav-link">
                     New Activity
                     </NavLink>

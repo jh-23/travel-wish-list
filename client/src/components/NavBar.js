@@ -26,7 +26,7 @@ function NavBar() {
                     Activities
                     </NavLink>
                     <NavLink
-                    to="/newdestination"
+                    to="/newdestinationform"
                     className="nav-link">
                     New Destination
                     </NavLink>

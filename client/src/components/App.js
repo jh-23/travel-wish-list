@@ -7,8 +7,6 @@ function App() {
 
   const { setUser } = useContext(Context);
 
-  console.log(setUser)
-
   useEffect(() => {
     fetch('/check_session').then((r) => {
       if (r.ok) {

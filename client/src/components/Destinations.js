@@ -5,7 +5,6 @@ import DestinationCard from './DestinationCard';
 function Destinations() {
 
     const { destinations, setDestinations } = useContext(Context);
-    console.log(useContext(Context))
 
     useEffect(() => {
         fetch("/all_destinations")

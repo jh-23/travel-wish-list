@@ -4,6 +4,7 @@ import Home from "./Home";
 import LoginForm from "./LoginForm";
 import Logout from "./Logout";
 import Activities from "../Activities";
+import NewDestinationForm from "./NewDestinationForm";
 
 const routes = [
 
@@ -30,6 +31,10 @@ const routes = [
     {
         path:"/activities",
         element: <Activities />
+    },
+    {
+        path:"/newdestinationform",
+        element: <NewDestinationForm />
     }
 
 ]

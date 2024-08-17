@@ -21,12 +21,14 @@ function LoginForm() {
         }).then((r) => {
             setIsLoading(false);
             if (r.ok) {
-                r.json().then((user) => setUser(user))
+                r.json().then((user) => {
+                    setUser(user);
+                    navigate('/');
+                });
             } else {
-                r.json().then((err) => setErrors(err.errors))
+                r.json().then((err) => setErrors(err.errors));
             }
-        })
-        navigate('/')
+        });
     }
 
     return(

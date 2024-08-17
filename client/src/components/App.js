@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
+import { Context } from "./Context";
 
 function App() {
 
-  const [user, setUser] = useState(null);
+  const { setUser } = useContext(Context);
+
+  console.log(setUser)
 
   useEffect(() => {
     fetch('/check_session').then((r) => {

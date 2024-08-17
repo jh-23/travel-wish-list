@@ -6,6 +6,7 @@ import Logout from "./Logout";
 import Activities from "../Activities";
 import NewDestinationForm from "./NewDestinationForm";
 import NewActivityForm from "../NewActivityForm";
+import AddToWishList from "./AddToWishList";
 
 const routes = [
 
@@ -40,6 +41,10 @@ const routes = [
     {
         path: "/newactivityform",
         element: <NewActivityForm />
+    },
+    {
+        path: "/addtowishlist",
+        element: <AddToWishList />
     }
 
 ]

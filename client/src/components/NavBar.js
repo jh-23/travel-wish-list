@@ -18,28 +18,34 @@ function NavBar() {
                     to="/destinations"
                     className='nav-link'
                     >
-                    Destinations
+                    All Destinations
                     </NavLink>
                     <NavLink
                     to="/activities"
                     className='nav-link'>
-                    Activities
+                    All Activities
                     </NavLink>
                     <NavLink
                     to="/newdestinationform"
                     className="nav-link">
-                    New Destination
+                    Add Destination
                     </NavLink>
                     <NavLink
                     to="/newactivityform"
                     className="nav-link">
-                    New Activity
+                    Add Activity
+                    </NavLink>
+                    <NavLink
+                    to="/addtowishlist"
+                    className="nav-link">
+                    Destination/Activity Wish List 
                     </NavLink>
                     <NavLink
                     to="/logout"
                     className="nav-link">
                     Logout
                     </NavLink>
+
                 </nav>
             </header>
         </div>

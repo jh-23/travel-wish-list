@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './DestinationCard.css';
+import { Context } from './Context';
+import { useNavigate } from 'react-router-dom';
 
 function DestinationCard({ destination }) {
+
+    const { destinationId, setDestinationId } = useContext(Context);
+
+    const navigate = useNavigate();
+
+    function handleGetActivityByDestinationClick() {
+        setDestinationId(destination.id)
+        navigate('/activities')
+    }
 
     console.log(destination)
     
@@ -13,6 +24,7 @@ function DestinationCard({ destination }) {
                 <h2>{destination.city}</h2>
                 <p>{destination.state}, {destination.country}</p>
             </div>
+            <button onClick={handleGetActivityByDestinationClick}>View Activities</button>
         </div>
         </div>
     )

@@ -4,10 +4,10 @@ import ActivityCard from './components/ActivityCard';
 
 function Activities() {
 
-    const { activities, setActivities } = useContext(Context);
+    const { activities, setActivities, destinationId } = useContext(Context);
 
     useEffect(() => {
-        fetch("/all_activities")
+        fetch(`/activity_by_destination/${destinationId}`)
             .then((r) => {
                 if(!r.ok) {
                     throw new Error('Network response was not ok');
@@ -23,7 +23,7 @@ function Activities() {
             .catch((error) => {
                 console.error('Error fetching destinations: ', error)
             })
-    }, [setActivities])
+    }, [destinationId, setActivities])
 
     if(!activities) {
         return <h1>Loading...</h1>

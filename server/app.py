@@ -90,6 +90,33 @@ class ActivityByDestination(Resource):
         
         return response
     
+    def post(self, id):
+        
+        user = User.query.filter(User.id == session['user_id']).first()
+        
+        destination = Destination.query.filter_by(id=id).first()
+        
+        json = request.get_json()
+        
+        added_activity_destination = ActivityDestination(
+            destination_id = destination.id,
+            activity_id = json.get('activity_id'),
+            user_id = user.id
+        )
+        
+        db.session.add(added_activity_destination)
+        db.session.commit()
+        
+        response_dict = added_activity_destination.to_dict()
+        
+        response = make_response(
+            response_dict,
+            201
+        )
+        
+        return response
+        
+    
 api.add_resource(ActivityByDestination, '/activity_by_destination/<int:id>')
 
 class AllActivities(Resource):

@@ -92,7 +92,7 @@ class ActivityByDestination(Resource):
     
 api.add_resource(ActivityByDestination, '/activity_by_destination/<int:id>')
 
-class Activities(Resource):
+class AllActivities(Resource):
     
     def get(self):
         
@@ -109,7 +109,7 @@ class Activities(Resource):
         
         json = request.get_json()
         
-        new_activity = Activities(
+        new_activity = Activity(
             activity_name = json.get('activity_name'),
             activity_description = json.get('activity_description'),
             activity_image = json.get('activity_image')
@@ -127,7 +127,7 @@ class Activities(Resource):
         
         return response
         
-api.add_resource(Activities, '/all_activities')
+api.add_resource(AllActivities, '/all_activities')
 
 
 class ActivityByID(Resource):

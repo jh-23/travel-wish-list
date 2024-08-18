@@ -14,6 +14,10 @@ function DestinationCard({ destination }) {
         navigate('/activities')
     }
 
+    function handleEditClick() {
+        navigate('')
+    }
+
     console.log(destination)
     
     return(

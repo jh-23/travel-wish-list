@@ -19,9 +19,13 @@ function ContextProvider({ children }) {
     const [activityDescription, setActivityDescription] = useState("");
     const [activityImage, setActivityImage] = useState("");
 
-    const [activityWishList, setActivityWishList] = useState("");
+    const [activityWishList, setActivityWishList] = useState([]);
     const [activityList, setActivityList] = useState([]);
     const [destinationId, setDestinationId] = useState(null);
+    const [activityId, setActivityId] = useState(null)
+
+    const [isEditing, setIsEditing] = useState(false)
+    const [currActivity, setCurrActivity] = useState({});
 
 
     function addDestination(newDestination) {
@@ -35,14 +39,24 @@ function ContextProvider({ children }) {
     }
 
     function addActivityToWishList(addedActivity) {
-        const updatedWishList = [...activityWishList, addedActivity]
-        setActivityWishList(updatedWishList)
+        const updatedActivityWishList = [...activityWishList, addedActivity]
+        setActivityWishList(updatedActivityWishList)
+    }
+
+    function handleUpdateActivity(updatedActivityObj) {
+        const updatedActivity = activities.map((activity) => {
+            if (activity.id === updatedActivityObj) {
+                return updatedActivityObj
+            } else {
+                return activity
+            }
+        })
+        setActivities(updatedActivity)
     }
 
 
-
     return(
-        <Context.Provider value={{ username, setUsername, password, setPassword, user, setUser, errors, setErrors, isLoading, setIsLoading, destinations, setDestinations, activities, setActivities, city, setCity, state, setState, country, setCountry, image, setImage, addDestination, activityName, setActivityName, activityDescription, setActivityDescription, activityImage, setActivityImage, addActivity, destinationId, setDestinationId }}>
+        <Context.Provider value={{ username, setUsername, password, setPassword, user, setUser, errors, setErrors, isLoading, setIsLoading, destinations, setDestinations, activities, setActivities, city, setCity, state, setState, country, setCountry, image, setImage, addDestination, activityName, setActivityName, activityDescription, setActivityDescription, activityImage, setActivityImage, addActivity, destinationId, setDestinationId, addActivityToWishList, activityWishList, setActivityWishList, isEditing, setIsEditing, handleUpdateActivity, currActivity, setCurrActivity }}>
             {children}
         </Context.Provider>
     )

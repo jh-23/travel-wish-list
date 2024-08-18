@@ -1,10 +1,38 @@
-import React from 'react';
+import React, { useContext} from 'react';
+import { Context } from './Context';
 import './ActivityCard.css';
+import { useNavigate } from 'react-router-dom';
 
 function ActivityCard({ activity }) {
 
-//POST REQUEST handleSubmit
+    const { destinationId, user, addActivityToWishList, currActivity, setCurrActivity } = useContext(Context)
 
+    const navigate = useNavigate();
+
+    function handleClick(e) {
+        e.preventDefault();
+        fetch(`/activity_by_destination/${activity.id}`, {
+            method: "POST",
+            headers: {
+                "Content-Type" : "application/json",
+            },
+            body: JSON.stringify({
+                destination_id: destinationId,
+                activity_id: activity.id,
+                user_id: user.id
+            })
+        })
+        .then((r) => r.json())
+        .then((addedActivity) => addActivityToWishList(addedActivity))
+    }
+
+    function handleEditClick() {
+        setCurrActivity(activity)
+        navigate(`/editactivitycard/${activity.id}`)
+    }
+
+
+    console.log(user)
 
     return(
         <div className="activity-card">
@@ -13,7 +41,8 @@ function ActivityCard({ activity }) {
                 <h2>{activity.activity_name}</h2>
                 <p>{activity.activity_description}</p>
                 <br />
-                <button >Add Activity to Wish List</button>
+                <button onClick={handleClick}>Add Activity to Wish List</button>
+                <button onClick={handleEditClick} >Edit Activity Card</button>
             </div>
         </div>
     )

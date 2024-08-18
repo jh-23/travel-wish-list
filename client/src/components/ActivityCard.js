@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 function ActivityCard({ activity }) {
 
-    const { destinationId, user, addActivityToWishList, currActivity, setCurrActivity } = useContext(Context)
+    const { destinationId, user, addActivityToWishList, currActivity, setCurrActivity, handleDeleteActivity } = useContext(Context)
 
     const navigate = useNavigate();
 
@@ -31,6 +31,13 @@ function ActivityCard({ activity }) {
         navigate(`/editactivitycard/${activity.id}`)
     }
 
+    function handleDeleteClick() {
+        fetch(`/activity/${activity.id}`, {
+            method: "DELETE",
+        })
+        handleDeleteActivity(activity.id)
+    }
+
 
     console.log(user)
 
@@ -42,7 +49,10 @@ function ActivityCard({ activity }) {
                 <p>{activity.activity_description}</p>
                 <br />
                 <button onClick={handleClick}>Add Activity to Wish List</button>
+                <br />
                 <button onClick={handleEditClick} >Edit Activity Card</button>
+                <br />
+                <button onClick={handleDeleteClick} >Delete Activity</button>
             </div>
         </div>
     )

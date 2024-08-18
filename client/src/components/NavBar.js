@@ -21,11 +21,6 @@ function NavBar() {
                     All Destinations
                     </NavLink>
                     <NavLink
-                    to="/activities"
-                    className='nav-link'>
-                    All Activities
-                    </NavLink>
-                    <NavLink
                     to="/newdestinationform"
                     className="nav-link">
                     Add Destination

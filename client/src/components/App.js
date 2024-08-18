@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Travel Wish List</h1>
+        <h1 className="text-3xl font-bold">Travel Wish List</h1>
         <NavBar />
       </header>
 

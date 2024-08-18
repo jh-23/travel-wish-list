@@ -94,12 +94,10 @@ class ActivityByDestination(Resource):
         
         user = User.query.filter(User.id == session['user_id']).first()
         
-        destination = Destination.query.filter_by(id=id).first()
-        
         json = request.get_json()
         
         added_activity_destination = ActivityDestination(
-            destination_id = destination.id,
+            destination_id = json.get('destination_id'),
             activity_id = json.get('activity_id'),
             user_id = user.id
         )
@@ -118,6 +116,25 @@ class ActivityByDestination(Resource):
         
     
 api.add_resource(ActivityByDestination, '/activity_by_destination/<int:id>')
+
+# Make route for activity_destinations of a user.
+
+class UserAddedActivityDestinations(Resource):
+    
+    def get(self):
+    
+        user = User.query.filter(User.id == session['user_id']).first()
+    
+        user_activity_destinations_list = [activity_destinations.to_dict() for activity_destinations in user.activity_destinations]
+
+        response = make_response(
+            user_activity_destinations_list,
+            200
+        )
+    
+        return response 
+
+api.add_resource(UserAddedActivityDestinations, '/added_activity_by_destination')
 
 class AllActivities(Resource):
     

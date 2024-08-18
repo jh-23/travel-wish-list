@@ -10,6 +10,8 @@ class User(db.Model, SerializerMixin):
     
     __tablename__ = 'users'
     
+    serialize_rules=('-activity_destinations.user',)
+    
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), nullable=False)
     _password_hash = db.Column(db.String(128), nullable=False)
@@ -61,7 +63,7 @@ class ActivityDestination(db.Model, SerializerMixin):
     
     id = db.Column(db.Integer, primary_key=True)
     
-    serialize_rules = ('-destination.activity_destinations', '-activity.activity_destinations')
+    serialize_rules = ('-destination.activity_destinations', '-activity.activity_destinations', '-user.activity_destinations')
     
     # Foreign Keys
     destination_id = db.Column(db.Integer, db.ForeignKey('destinations.id'))

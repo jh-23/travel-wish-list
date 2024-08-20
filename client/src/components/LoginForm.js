@@ -58,7 +58,7 @@ function LoginForm() {
                     onChange={(e) => setPassword(e.target.value)}>
                 </Input>
                 </div>
-                <button type='submit' className="btn btn-blue">
+                <button type='submit' className="bg-indigo-500 text-white py-1 px-3 hover:bg-indigo-700-transition-colors">
                     {isLoading ? "Loading..." : "Login"}
                 </button>
             </form>

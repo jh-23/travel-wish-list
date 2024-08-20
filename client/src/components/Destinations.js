@@ -34,7 +34,7 @@ function Destinations() {
 
     return(
         <div>
-            <h1>Travel Wish List App</h1>
+            <h1 class="text-2xl font-medium text-black">Travel Wish List App</h1>
             <h1>See list of Destinations: </h1>
             <div className='destination-container'>
                 {destinations.map((destination) => (

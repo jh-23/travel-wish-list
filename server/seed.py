@@ -57,8 +57,24 @@ if __name__ == '__main__':
             image="https://i.natgeofe.com/n/ba9f1ab4-3abe-4b95-a884-90fc45d17db3/city-aerial-zurich-switzerland.jpg?w=2880&h=2158"
         ))
         
+        destination_3 = (Destination(
+            city="Rome",
+            state="N/A",
+            country="Italy",
+            image="https://www.citalia.com/-/media/bynder/citalia-non-geography/blogs/rome-city-guide/blog-rome-300273-2022-rome-shutterstock_1417390817-hybris.jpg?rev=6e4a0e96269a4345a799296d555a0c24&h=480.375&w=1081.5"
+        ))
+        
+        destination_4 = (Destination(
+            city="Munich",
+            state="N/A",
+            country="Germany",
+            image="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1000,h_562/w_61,x_11,y_11,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/z715zihpimytmgagayfe/MunichChristmasMarketTour.jpg"
+        ))
+        
         destinations_to_add.append(destination_1)
         destinations_to_add.append(destination_2)
+        destinations_to_add.append(destination_3)
+        destinations_to_add.append(destination_4)
         db.session.add_all(destinations_to_add)
         
         #activity_Destinations

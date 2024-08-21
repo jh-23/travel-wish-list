@@ -125,7 +125,7 @@ class UserAddedActivityDestinations(Resource):
     
         user = User.query.filter(User.id == session['user_id']).first()
     
-        user_activity_destinations_list = [activity_destinations.to_dict() for activity_destinations in user.activity_destinations]
+        user_activity_destinations_list = [activity_destinations.to_dict(only=('destination', 'activity', 'user')) for activity_destinations in user.activity_destinations]
 
         response = make_response(
             user_activity_destinations_list,
@@ -209,8 +209,32 @@ class ActivityByID(Resource):
         return response
 
 api.add_resource(ActivityByID, '/activity/<int:id>')
-    
 
+class AddActivityDestination(Resource):
+    
+    def post(self):
+        
+        json = request.get_json()
+        
+        new_activity_destination = ActivityDestination(
+            destination_id = json.get('destination_id'),
+            activity_id = json.get('activity_id')
+        )
+        
+        db.session.add(new_activity_destination)
+        db.session.commit()
+        
+        response_dict = new_activity_destination.to_dict()
+        
+        response = make_response(
+            response_dict,
+            201
+        )
+        
+        return response
+
+api.add_resource(AddActivityDestination, '/add_activity_destination')
+        
 
 class Login(Resource):
     

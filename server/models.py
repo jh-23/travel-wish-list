@@ -81,13 +81,13 @@ class ActivityDestination(db.Model, SerializerMixin):
     
     # route with session with user.  create a list of objects of activity_destinations
         
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'destination_id': self.destination_id,
-            'activity_id': self.activity_id,
-            'user_id': self.user_id,
-        }
+    # def to_dict(self):
+    #     return {
+    #         'id': self.id,
+    #         'destination_id': self.destination_id,
+    #         'activity_id': self.activity_id,
+    #         'user_id': self.user_id,
+    #     }
     
 class Activity(db.Model, SerializerMixin):
     

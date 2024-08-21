@@ -8,6 +8,7 @@ import NewDestinationForm from "./NewDestinationForm";
 import NewActivityForm from "../NewActivityForm";
 import AddToWishList from "./WishList";
 import EditActivityCard from "./EditActivityCard";
+import CreateActivityDestination from "./CreateActivityDestination";
 
 const routes = [
 
@@ -50,6 +51,10 @@ const routes = [
     {
         path: "/editactivitycard/:id",
         element: <EditActivityCard />
+    },
+    {
+        path: "/createactivitydestination",
+        element: <CreateActivityDestination />
     }
 
 ]

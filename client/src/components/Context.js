@@ -27,6 +27,10 @@ function ContextProvider({ children }) {
     const [isEditing, setIsEditing] = useState(false)
     const [currActivity, setCurrActivity] = useState({});
 
+    const [selectedActivity, setSelectedActivity] = useState("");
+    const [selectedDestination, setSelectedDestination] = useState("");
+    const [message, setMessage] = useState("");
+
 
     function addDestination(newDestination) {
         const updatedDestinationList = [...destinations, newDestination]
@@ -61,7 +65,7 @@ function ContextProvider({ children }) {
 
 
     return(
-        <Context.Provider value={{ username, setUsername, password, setPassword, user, setUser, errors, setErrors, isLoading, setIsLoading, destinations, setDestinations, activities, setActivities, city, setCity, state, setState, country, setCountry, image, setImage, addDestination, activityName, setActivityName, activityDescription, setActivityDescription, activityImage, setActivityImage, addActivity, destinationId, setDestinationId, addActivityToWishList, activityWishList, setActivityWishList, isEditing, setIsEditing, handleUpdateActivity, currActivity, setCurrActivity, handleDeleteActivity }}>
+        <Context.Provider value={{ username, setUsername, password, setPassword, user, setUser, errors, setErrors, isLoading, setIsLoading, destinations, setDestinations, activities, setActivities, city, setCity, state, setState, country, setCountry, image, setImage, addDestination, activityName, setActivityName, activityDescription, setActivityDescription, activityImage, setActivityImage, addActivity, destinationId, setDestinationId, addActivityToWishList, activityWishList, setActivityWishList, isEditing, setIsEditing, handleUpdateActivity, currActivity, setCurrActivity, handleDeleteActivity, selectedActivity, setSelectedActivity, selectedDestination, setSelectedDestination, message, setMessage }}>
             {children}
         </Context.Provider>
     )

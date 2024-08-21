@@ -31,6 +31,11 @@ function NavBar() {
                     Add Activity
                     </NavLink>
                     <NavLink
+                    to="/createactivitydestination"
+                    className="nav-link">
+                    New Activity Destination
+                    </NavLink>
+                    <NavLink
                     to="/addtowishlist"
                     className="nav-link">
                     Destination/Activity Wish List 

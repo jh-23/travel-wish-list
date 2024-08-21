@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 function Logout() {
 
     const { setUser } = useContext(Context);
-    console.log(setUser)
     const navigate = useNavigate();
 
     function handleLogoutClick() {

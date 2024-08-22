@@ -32,14 +32,15 @@ function LoginForm() {
     }
 
     return(
-        <div>
-            <h1>Welcome to the Travel Wish List</h1>
-            <h4>Please sign in to view travel information: </h4>
+        <div class="bg-cover bg-center h-screen" style={{ backgroundImage: "url('https://wallpapers.com/images/hd/plane-desktop-yms31u8wyuke7ari.jpg')" }}>
+            <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Welcome to the Travel Wish List</h1>
+            <h4 class="text-2xl font-bold dark:text-white">Please sign in to view travel information: </h4>
             <br />
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor='username'>Username: </label>
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Username: </label>
                     <Input
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-400 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     type='text'
                     id='username'
                     autoComplete='off'
@@ -49,8 +50,9 @@ function LoginForm() {
                 </div>
                 <br />
                 <div>
-                    <label htmlFor='password'>Password: </label>
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Password: </label>
                     <Input
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-400 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     type='password'
                     id='password'
                     autoComplete='current-password'
@@ -58,6 +60,7 @@ function LoginForm() {
                     onChange={(e) => setPassword(e.target.value)}>
                 </Input>
                 </div>
+                <br/>
                 <button type='submit' className="bg-indigo-500 text-white py-1 px-2 hover:bg-indigo-700 transition-colors">
                     {isLoading ? "Loading..." : "Login"}
                 </button>

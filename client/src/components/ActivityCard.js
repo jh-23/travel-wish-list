@@ -19,7 +19,7 @@ function ActivityCard({ activity }) {
             body: JSON.stringify({
                 destination_id: destinationId,
                 activity_id: activity.id,
-                user_id: user.id
+
             })
         })
         .then((r) => r.json())
@@ -48,11 +48,11 @@ function ActivityCard({ activity }) {
                 <h2>{activity.activity_name}</h2>
                 <p>{activity.activity_description}</p>
                 <br />
-                <button onClick={handleClick}>Add Activity to Wish List</button>
+                <button onClick={handleClick} class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Add Activity to Wish List</button>
                 <br />
-                <button onClick={handleEditClick} >Edit Activity Card</button>
+                <button onClick={handleEditClick} class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Edit Activity Card</button>
                 <br />
-                <button onClick={handleDeleteClick} >Delete Activity</button>
+                <button onClick={handleDeleteClick} class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Delete Activity</button>
             </div>
         </div>
     )

@@ -23,22 +23,22 @@ function NavBar() {
                     <NavLink
                     to="/newdestinationform"
                     className="nav-link">
-                    Add Destination
+                    Create Destination
                     </NavLink>
                     <NavLink
                     to="/newactivityform"
                     className="nav-link">
-                    Add Activity
+                    Create Activity
                     </NavLink>
                     <NavLink
                     to="/createactivitydestination"
                     className="nav-link">
-                    New Activity Destination
+                    Create Activity Destination
                     </NavLink>
                     <NavLink
                     to="/addtowishlist"
                     className="nav-link">
-                    Destination/Activity Wish List 
+                    Travel Wish List 
                     </NavLink>
                     <NavLink
                     to="/logout"

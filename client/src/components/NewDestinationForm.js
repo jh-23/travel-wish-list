@@ -39,7 +39,7 @@ function NewDestinationForm() {
                 <br />
 
                 <label>City: </label>
-                <input type='text' name='city' placeholder='city name' value={city} onChange={(e) => setCity(e.target.value)} />
+                <input type='text' name='city' placeholder='city name' value={city} onChange={(e) => setCity(e.target.value)} class="mb-2 uppercase tracking-wide font-bold text-lg text-grey-darkest" />
                 <br />
                 <label>State: </label>
                 <input type='text' name='state' placeholder='state name or N/A' value={state} onChange={(e) => setState(e.target.value)} />

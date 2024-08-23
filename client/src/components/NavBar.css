@@ -1,9 +1,9 @@
 .nav-link{
     display: inline-block;
     box-sizing: content-box;
-    width: 140px;
+    width: 130px;
     padding: 7px;
-    margin: 0 6px 6px;
+    margin: 0 7px 7px;
     background: orangered;
     text-decoration: none;
     text-align: center;

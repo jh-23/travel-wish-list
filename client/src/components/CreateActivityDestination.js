@@ -48,8 +48,11 @@ function CreateActivityDestination() {
         <div>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="activity">Select Activity:</label>
-                    <select
+                    <h1 class="flex items-center text-5xl font-extrabold dark:text-white">Travel Wish List App</h1>
+                    <h4 lass="text-2xl font-bold dark:text-white">Create Activity Destination Here:</h4>
+                    <br />
+                    <label name="activity" id="activity">Select Activity:</label>
+                    <select name="destination" class="w-1000 border-gray- px-3 py-2 rounded-log shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
                         id="activity"
                         value={selectedActivity}
                         onChange={(e) => setSelectedActivity(e.target.value)}
@@ -62,9 +65,10 @@ function CreateActivityDestination() {
                         ))}
                     </select>
                 </div>
+                <br />
                 <div>
                     <label htmlFor="destination">Select Destination:</label>
-                    <select
+                    <select name="destination" class="w-100 border-gray- px-3 py-2 rounded-log shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
                         id="destination"
                         value={selectedDestination}
                         onChange={(e) => setSelectedDestination(e.target.value)}
@@ -77,7 +81,8 @@ function CreateActivityDestination() {
                         ))}
                     </select>
                 </div>
-                <button type="submit">Create</button>
+                <br />
+                <button type="submit">Submit</button>
             </form>
         </div>
     )

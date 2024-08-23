@@ -34,8 +34,8 @@ function NewDestinationForm() {
         <div className='new-destination-form'>
             <br />
             <form onSubmit={handleSubmit} >
-                <h1> Travel Wish List App</h1>
-                <h4> Add New Destination: </h4>
+                <h1 class="flex items-center text-5xl font-extrabold dark:text-white"> Travel Wish List App</h1>
+                <h4 class="text-2xl font-bold dark:text-white"> Add New Destination: </h4>
                 <br />
 
                 <label>City: </label>
@@ -50,7 +50,8 @@ function NewDestinationForm() {
                 <label>City Image URL: </label>
                 <input type='text' name='image' placeholder='city image URL' value={image} onChange={(e) => setImage(e.target.value)} />
                 <br />
-                <button type='submit'>Submit</button>
+                <br />
+                <button type='submit'  class="select-none rounded-lg border border-gray-900 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-gray-900 transition-all hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">Submit</button>
             </form>
         </div>
     )

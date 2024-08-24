@@ -10,6 +10,7 @@ import AddToWishList from "./WishList";
 import EditActivityCard from "./EditActivityCard";
 import CreateActivityDestination from "./CreateActivityDestination";
 import Layout from "../Layout";
+import SignupForm from "./SignupForm";
 
 const routes = [
 
@@ -25,14 +26,7 @@ const routes = [
                 path: "/destinations",
                 element: <Destinations />
             },
-            {
-                path:"/login",
-                element: <LoginForm />
-            },
-            {
-                path: "/logout",
-                element: <Logout />
-            },
+
             {
                 path:"/activities",
                 element: <Activities />
@@ -57,10 +51,19 @@ const routes = [
                 path: "/createactivitydestination",
                 element: <CreateActivityDestination />
             }
-        ]
+        ],
     },
-
-
+    {   path:"/login",
+        element: <LoginForm />
+    },
+    {
+        path: "/signupform",
+        element: <SignupForm />
+    },
+    {
+        path: "/logout",
+        element: <Logout />
+    }
 ]
 
 export default routes;

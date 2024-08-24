@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Logout() {
 
-    const { setUser } = useContext(Context);
+    const { user, setUser } = useContext(Context);
     const navigate = useNavigate();
 
     function handleLogoutClick() {
@@ -16,6 +16,8 @@ function Logout() {
             }
         })
     }
+
+
 
     return(
         <div>

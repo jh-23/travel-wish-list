@@ -2,10 +2,12 @@ import React, { useContext } from 'react'
 import { Context } from './Context'
 import { useNavigate } from 'react-router-dom'
 import Input from './Input';
+import { Link } from 'react-router-dom'
+import SignupForm from './SignupForm';
 
 function LoginForm() {
 
-    const { username, setUsername, password, setPassword, isLoading, setIsLoading, errors, setErrors, setUser } = useContext(Context);
+    const { username, setUsername, password, setPassword, isLoading, setIsLoading, errors, setErrors, setUser, showSignup, setShowSignUp } = useContext(Context);
 
     const navigate = useNavigate();
 
@@ -31,12 +33,18 @@ function LoginForm() {
         });
     }
 
+    function handleSignUpClick(){
+        setShowSignUp(true)
+    }
+
     return(
-        <div class="bg-cover bg-center h-screen" style={{ backgroundImage: "url('https://wallpapers.com/images/hd/plane-desktop-yms31u8wyuke7ari.jpg')" }}>
-            <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Welcome to the Travel Wish List</h1>
-            <h4 class="text-2xl font-bold dark:text-white">Please sign in to view travel information: </h4>
+        <div class="bg-cover bg-center h-screen" style={{ backgroundImage: "url('https://wallpapers.com/images/hd/plane-desktop-yms31u8wyuke7ari.jpg')" }}>{showSignup ? (<SignupForm />) : (
+        <>
+
             <br />
             <form onSubmit={handleSubmit}>
+            <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Welcome to the Travel Wish List</h1>
+            <h4 class="text-2xl font-bold dark:text-white">Please sign in to view travel information: </h4>
                 <div>
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Username: </label>
                     <Input
@@ -64,14 +72,23 @@ function LoginForm() {
                 <button type='submit' className="bg-indigo-500 text-white py-1 px-2 hover:bg-indigo-700 transition-colors">
                     {isLoading ? "Loading..." : "Login"}
                 </button>
+                <h4>Don't have an account?  Sign Up Here:</h4>
             </form>
+
+            <Link to="/signupform">
+            <button onClick={handleSignUpClick}>Sign Up</button>
+            </Link>
+            </>
+            )}
             {errors.length > 0 && (
                 <div>
                     {errors.map((error, index) => (
                         <p key={index} style={{ color: 'red' }}>{error}</p>
                     ))}
                 </div>
+            
             )}
+
         </div>
     )
 }

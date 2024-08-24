@@ -9,53 +9,57 @@ import NewActivityForm from "../NewActivityForm";
 import AddToWishList from "./WishList";
 import EditActivityCard from "./EditActivityCard";
 import CreateActivityDestination from "./CreateActivityDestination";
+import Layout from "../Layout";
 
 const routes = [
 
     {
         path: "/",
-        element: <App />
+        element: <Layout />,
+        children: [
+            {
+                path: "/home",
+                element: <Home />
+            },
+            {
+                path: "/destinations",
+                element: <Destinations />
+            },
+            {
+                path:"/login",
+                element: <LoginForm />
+            },
+            {
+                path: "/logout",
+                element: <Logout />
+            },
+            {
+                path:"/activities",
+                element: <Activities />
+            },
+            {
+                path: "/newdestinationform",
+                element: <NewDestinationForm />
+            },
+            {
+                path: "/newactivityform",
+                element: <NewActivityForm />
+            },
+            {
+                path: "/addtowishlist",
+                element: <AddToWishList />
+            },
+            {
+                path: "/editactivitycard/:id",
+                element: <EditActivityCard />
+            },
+            {
+                path: "/createactivitydestination",
+                element: <CreateActivityDestination />
+            }
+        ]
     },
-    {
-        path: "/home",
-        element: <Home />
-    },
-    {
-        path: "/destinations",
-        element: <Destinations />
-    },
-    {
-        path:"/login",
-        element: <LoginForm />
-    },
-    {
-        path: "/logout",
-        element: <Logout />
-    },
-    {
-        path:"/activities",
-        element: <Activities />
-    },
-    {
-        path: "/newdestinationform",
-        element: <NewDestinationForm />
-    },
-    {
-        path: "/newactivityform",
-        element: <NewActivityForm />
-    },
-    {
-        path: "/addtowishlist",
-        element: <AddToWishList />
-    },
-    {
-        path: "/editactivitycard/:id",
-        element: <EditActivityCard />
-    },
-    {
-        path: "/createactivitydestination",
-        element: <CreateActivityDestination />
-    }
+
 
 ]
 

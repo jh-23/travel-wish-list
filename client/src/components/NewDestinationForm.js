@@ -31,7 +31,7 @@ function NewDestinationForm() {
 
     return(
         <div>
-        <body class="h-screen bg-gradient-to-b from-green-200 to-green-500">
+        <body class="bg-cover bg-center h-screen" style={{ backgroundImage: "url(https://rezdy.com//wp-content/uploads/2016/04/Blog-Photos-9.jpg)" }}>
         <div>
             <br />
             <form onSubmit={handleSubmit} >

@@ -2,7 +2,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import Input from './Input.js';
 import { useNavigate } from 'react-router-dom';
 import { Context } from './Context.js';
 
@@ -46,31 +45,37 @@ const  SignupForm = () => {
     }
 
     return (
-        <div>
-            <h2>Sign up here to create a Travel Wish List Account: </h2>
+        <div class="bg-cover bg-center h-screen" style={{ backgroundImage: "url('https://wallpapers.com/images/hd/plane-desktop-yms31u8wyuke7ari.jpg')" }}>
+            <h2 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-3xl dark:text-white">Sign up here to create a Travel Wish List Account: </h2>
             <form onSubmit={formik.handleSubmit} style={{ margin: "30px"}}>
-                <label htmlFor="username">Username:</label>
+                <label class="text-neutral-600 text-base font-normal">Username:</label>
                 <br />
-                <Input
+                <input
                     id="username"
                     name="username"
                     onChange={formik.handleChange}
                     value={formik.values.username}
+                    class="h-10 w-100 border-b-2 border-gray-200 text-gray-900 focus:outline-none focus:border-yellow-600"
+                    placeholder="Username"
                 >
-                </Input>
+                </input>
                 <p style={{ color: "red" }}> {formik.errors.username}</p>
                 <br />
-                <label htmlFor='password'>Password:</label>
-                <Input
+                <label htmlFor='password' class="text-neutral-600 text-base font-normal">Password:</label>
+                <br />
+                <input
                     id="password"
                     name="password"
                     onChange={formik.handleChange}
                     value={formik.values.password}
+                    class="h-10 w-100 border-b-2 border-gray-200 text-gray-900 focus:outline-none focus:border-red-600"
+                    placeholder="Password"
                 >
-                </Input>
+                </input>
                 <p style={{ color: "red" }}> {formik.errors.password}</p>
                 <br />
-                <button onClick={handleSignUpClick} type='submit'>{isLoading ? "Loading..." : "Sign Up"}</button>
+                <br />
+                <button onClick={handleSignUpClick} type='submit' class="bg-indigo-500 text-white py-1 px-2 hover:bg-indigo-700 transition-colors">{isLoading ? "Loading..." : "Sign Up"}</button>
             </form>
             <table style = {{ padding: "15px" }}>
             </table>

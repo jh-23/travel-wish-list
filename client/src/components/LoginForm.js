@@ -43,7 +43,7 @@ function LoginForm() {
 
             <br />
             <form onSubmit={handleSubmit}>
-            <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Welcome to the Travel Wish List</h1>
+            <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Welcome to the Travel Wish List App!</h1>
             <h4 class="text-2xl font-bold dark:text-white">Please sign in to view travel information: </h4>
                 <div>
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Username: </label>
@@ -69,14 +69,21 @@ function LoginForm() {
                 </Input>
                 </div>
                 <br/>
-                <button type='submit' className="bg-indigo-500 text-white py-1 px-2 hover:bg-indigo-700 transition-colors">
+                <button type='submit' class="bg-indigo-500 text-white py-1 px-2 hover:bg-indigo-700 transition-colors">
                     {isLoading ? "Loading..." : "Login"}
                 </button>
-                <h4>Don't have an account?  Sign Up Here:</h4>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <h4 class="text-2xl font-bold dark:text-white">Don't have a Travel Wish List account?   Sign Up Here:</h4>
             </form>
 
             <Link to="/signupform">
-            <button onClick={handleSignUpClick}>Sign Up</button>
+            <button onClick={handleSignUpClick} class="bg-indigo-500 text-white py-1 px-2 hover:bg-indigo-700 transition-colors">Sign Up</button>
             </Link>
             </>
             )}

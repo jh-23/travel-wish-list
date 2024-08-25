@@ -24,7 +24,7 @@ function DestinationCard({ destination }) {
                 <h2>{destination.city}</h2>
                 <p>{destination.state}, {destination.country}</p>
             </div>
-            <button onClick={handleGetActivityByDestinationClick} class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">View Activities</button>
+            <button onClick={handleGetActivityByDestinationClick} class="bg-orange-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">View Activities</button>
         </div>
         </div>
     )

@@ -32,12 +32,12 @@ function NewActivityForm() {
         <div className='new-activity-form' class="bg-cover bg-center h-screen" style={{ backgroundImage: "url(https://i0.wp.com/thewildwayfarer.com/wp-content/uploads/2017/02/travel-wishlist.jpg?fit=3343%2C3285&ssl=1)" }}>
             <br />
             <h1 class="text-5xl font-extrabold dark:text-white">Travel Wish List App</h1>
-            <h4 class="text-2xl font-bold dark:text-white"> Create Activity Here: </h4>
             <br />
             <form onSubmit={handleSubmit}>
                 <br />
                 <br />
                 <br />
+                <h4 class="text-2xl font-bold dark:text-white"> Create Activity Here: </h4>
                 <br />
                 <label>Activity Name: </label>
                 <input type="text" name="activity-name" placeholder="Activity name" value={activityName} onChange={(e) => setActivityName(e.target.value)} />

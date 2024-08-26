@@ -45,10 +45,10 @@ function CreateActivityDestination() {
 
 
     return(
-        <div>
+        <div class="bg-cover bg-center h-screen" style={{ backgroundImage: "url(https://destinationdeluxe.com/wp-content/uploads/2021/06/Adventure-Activities-Destination-Deluxe.jpg)" }}>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <h1 class="flex items-center text-5xl font-extrabold dark:text-white">Travel Wish List App</h1>
+                    <h1 class="flex items-center text-5xl font-extrabold text-white">Travel Wish List App</h1>
                     <br />
                     <h4 class="text-2xl font-bold dark:text-white">Create Activity Destination Here:</h4>
                     <br />

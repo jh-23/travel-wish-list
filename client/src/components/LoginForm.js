@@ -25,7 +25,7 @@ function LoginForm() {
             if (r.ok) {
                 r.json().then((user) => {
                     setUser(user);
-                    navigate('/');
+                    navigate('/home');
                 });
             } else {
                 r.json().then((err) => setErrors(err.errors));

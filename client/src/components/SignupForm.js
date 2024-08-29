@@ -8,13 +8,14 @@ import { Context } from './Context.js';
 
 const  SignupForm = () => {
 
-    const { isLoading, setIsLoading, user, setUser } = useContext(Context);
+    const { isLoading, setIsLoading, user, setUser, password, setPassword } = useContext(Context);
     const navigate = useNavigate();
 
     const formSchema = yup.object().shape({
         username: yup.string().required("Must enter a valid username"),
         password: yup.string().required("Must enter a password").max(16)
     })
+
 
     const formik = useFormik({
         initialValues: {
@@ -23,7 +24,7 @@ const  SignupForm = () => {
         },
         validationSchema: formSchema,
         onSubmit: (values) => {
-            setIsLoading(true);
+            setIsLoading(true);  
             console.log("I have been clicked")
             fetch("/signup", {
                 method: "POST",
@@ -33,16 +34,19 @@ const  SignupForm = () => {
                 body: JSON.stringify(values, null, 2),
             }).then((r) => {
                 if (r.status === 201) {
+                    console.log(user)
                     setUser(r)
-                    navigate('/')
+                    // navigate('/')
                 }
             })
         }
     })
 
     function handleSignUpClick() {
-        navigate('/')
+        navigate('/login')
     }
+
+    console.log(user);
 
     return (
         <div class="bg-cover bg-center h-screen" style={{ backgroundImage: "url('https://wallpapers.com/images/hd/plane-desktop-yms31u8wyuke7ari.jpg')" }}>

@@ -45,7 +45,6 @@ function NavBar() {
                     className="nav-link">
                     Logout
                     </NavLink>
-
                 </nav>
             </header>
         </div>

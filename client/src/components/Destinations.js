@@ -34,8 +34,8 @@ function Destinations() {
 
     return(
         <div class="bg-blue-500 min-h-screen p-6">
-            <h1 class="text-2xl font-medium text-white">Travel Wish List App</h1>
-            <h1 class='text-xl text-white mb-4'>See list of Destinations: </h1>
+            <h1 class="text-5xl font-medium text-yellow-500 font-serif font-bold">Travel Wish List App</h1>
+            <h1 class='text-3xl text-yellow-500 mb-4 font-serif font-bold'>See all Destinations: </h1>
             <div className='destination-container grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
                 {destinations.map((destination) => (
                     <DestinationCard key={destination.id} destination={destination} />

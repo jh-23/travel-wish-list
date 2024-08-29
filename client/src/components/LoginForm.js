@@ -24,6 +24,7 @@ function LoginForm() {
             setIsLoading(false);
             if (r.ok) {
                 r.json().then((user) => {
+                    console.log(user);
                     setUser(user);
                     navigate('/home');
                 });
@@ -87,7 +88,7 @@ function LoginForm() {
             </Link>
             </>
             )}
-            {errors.length > 0 && (
+            {errors && errors.length > 0 && (
                 <div>
                     {errors.map((error, index) => (
                         <p key={index} style={{ color: 'red' }}>{error}</p>

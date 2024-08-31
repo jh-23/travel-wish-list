@@ -48,12 +48,13 @@ function CreateActivityDestination() {
         <div class="bg-cover bg-center h-screen" style={{ backgroundImage: "url(https://destinationdeluxe.com/wp-content/uploads/2021/06/Adventure-Activities-Destination-Deluxe.jpg)" }}>
             <form onSubmit={handleSubmit}>
                 <div>
+                    <br />
                     <h1 class="flex items-center text-5xl font-extrabold text-white">Travel Wish List App</h1>
                     <br />
-                    <h4 class="text-2xl font-bold dark:text-white">Create Activity Destination Here:</h4>
+                    <h4 class="text-2xl font-bold text-white">Create Activity Destination Here:</h4>
                     <br />
                     <br />
-                    <label name="activity" id="activity">Select Activity:      </label>
+                    <label name="activity" id="activity" class="text-xl font-extrabold text-white">Select Activity:      </label>
                     <select name="destination" class="w-100 border-gray- px-3 py-2 rounded-log shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
                         id="activity"
                         value={selectedActivity}
@@ -69,7 +70,7 @@ function CreateActivityDestination() {
                 </div>
                 <br />
                 <div>
-                    <label htmlFor="destination">Select Destination:       </label>
+                    <label htmlFor="destination" class="text-xl font-extrabold text-white">Select Destination:       </label>
                     <select name="destination" class="w-600 border-gray- px-3 py-2 rounded-log shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
                         id="destination"
                         value={selectedDestination}

@@ -36,15 +36,12 @@ const  SignupForm = () => {
                 if (r.status === 201) {
                     console.log(user)
                     setUser(r)
-                    // navigate('/')
+                    navigate('/home')
                 }
             })
         }
     })
 
-    function handleSignUpClick() {
-        navigate('/login')
-    }
 
     console.log(user);
 
@@ -79,7 +76,7 @@ const  SignupForm = () => {
                 <p style={{ color: "red" }}> {formik.errors.password}</p>
                 <br />
                 <br />
-                <button onClick={handleSignUpClick} type='submit' class="bg-indigo-500 text-white py-1 px-2 hover:bg-indigo-700 transition-colors">{isLoading ? "Loading..." : "Sign Up"}</button>
+                <button type='submit' class="bg-indigo-500 text-white py-1 px-2 hover:bg-indigo-700 transition-colors">{isLoading ? "Loading..." : "Sign Up"}</button>
             </form>
             <table style = {{ padding: "15px" }}>
             </table>

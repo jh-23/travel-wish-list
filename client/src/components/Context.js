@@ -42,7 +42,7 @@ function ContextProvider({ children }) {
 
     function addActivity(newActivity) {
         const updatedActivityList = [...activities, newActivity]
-        setActivityDescription(updatedActivityList)
+        setActivities(updatedActivityList)
     }
 
     function addActivityToWishList(addedActivity) {

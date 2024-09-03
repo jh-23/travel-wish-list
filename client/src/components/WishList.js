@@ -3,7 +3,7 @@ import { Context } from './Context';
 import ActivityCard from './ActivityCard';
 
 function WishList() {
-    const { activityWishList, setActivityWishList } = useContext(Context);
+    const { user, activityWishList, setActivityWishList } = useContext(Context);
 
     useEffect(() => {
         fetch('/added_activity_by_destination')
@@ -45,7 +45,7 @@ function WishList() {
 
     return (
         <div>
-            <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-orange-500 md:text-5xl lg:text-6xl dark:text-white">Travel Wish List</h1>
+            <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-orange-500 md:text-5xl lg:text-6xl dark:text-white">{ user ? `${user.username}'s Travel Wish List` : 'Travel Wish List'}</h1>
             {Object.entries(groupedActivities).map(([destination, activities]) => (
                 <div key={destination}>
                     <h2 class="text-3xl font-bold text-blue-500">{destination}</h2>

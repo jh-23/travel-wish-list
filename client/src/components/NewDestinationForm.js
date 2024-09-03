@@ -31,7 +31,8 @@ function NewDestinationForm() {
 
     return(
         <div>
-        <body class="bg-cover bg-center h-screen" style={{ backgroundImage: "url(https://rezdy.com//wp-content/uploads/2016/04/Blog-Photos-9.jpg)" }}>
+        <body class="bg-cover bg-center h-screen" style={{ backgroundImage: 
+            "url(https://rezdy.com//wp-content/uploads/2016/04/Blog-Photos-9.jpg)" }}>
         <div>
             <br />
             <form onSubmit={handleSubmit} >
@@ -39,7 +40,8 @@ function NewDestinationForm() {
                 <h4 class="text-2xl font-bold font-extrabold text-blue-500"> Add a new travel destination: </h4>
                 <br />
                 <label class="text-blue-500 font-extrabold">City: </label>
-                <input type='text' name='city' placeholder='CITY NAME' value={city} onChange={(e) => setCity(e.target.value)} class="mb-2 uppercase tracking-wide font-bold text-lg text-grey-darkest" />
+                <input type='text' name='city' placeholder='City Name' value={city} onChange={(e) => setCity(e.target.value)} 
+                class="mb-2 uppercase tracking-wide font-bold text-lg text-grey-darkest" />
                 <br />
                 <br />
                 <label class="text-blue-500 font-extrabold">State: </label>
@@ -54,7 +56,9 @@ function NewDestinationForm() {
                 <input type='text' name='image' placeholder='City image URL' value={image} onChange={(e) => setImage(e.target.value)} />
                 <br />
                 <br />
-                <button type='submit' class="select-none rounded-lg border border-red-900 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-900 transition-all hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">Submit</button>
+                <button type='submit' class="select-none rounded-lg border border-red-900 py-3 px-6 text-center align-middle 
+                font-sans text-xs font-bold uppercase text-blue-900 transition-all hover:opacity-75 focus:ring focus:ring-gray-300 
+                active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">Submit</button>
             </form>
         </div>
         </body>

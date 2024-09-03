@@ -8,7 +8,8 @@ import { Context } from './Context.js';
 
 const  SignupForm = () => {
 
-    const { isLoading, setIsLoading, user, setUser, password, setPassword } = useContext(Context);
+    const { isLoading, setIsLoading, user, setUser } = useContext(Context);
+    
     const navigate = useNavigate();
 
     const formSchema = yup.object().shape({

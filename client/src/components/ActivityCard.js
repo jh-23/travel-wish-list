@@ -1,6 +1,5 @@
 import React, { useContext} from 'react';
 import { Context } from './Context';
-import './ActivityCard.css';
 import { useNavigate } from 'react-router-dom';
 
 function ActivityCard({ activity }) {
@@ -42,20 +41,39 @@ function ActivityCard({ activity }) {
     console.log(user)
 
     return(
-        <div className="activity-card">
-            <img src={activity.activity_image} alt={activity.activity_name} className="activity-image" />
-            <div className="activity-details">
-                <h2>{activity.activity_name}</h2>
-                <p>{activity.activity_description}</p>
-                <br />
-                <button onClick={handleClick} class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Add Activity to Wish List</button>
-                <br />
-                <button onClick={handleEditClick} class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Edit Activity Card</button>
-                <br />
-                <button onClick={handleDeleteClick} class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Delete Activity</button>
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden m-4 max-w-sm">
+        <img
+            src={activity.activity_image}
+            alt={activity.activity_name}
+            class="w-full h-48 object-cover"
+        />
+        <div class="p-4">
+            <h2 class="text-xl font-bold text-blue-600">{activity.activity_name}</h2>
+            <p class="text-gray-700 mt-2">{activity.activity_description}</p>
+            <br />
+            <div class="space-y-2">
+                <button
+                    onClick={handleClick}
+                    class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-full"
+                >
+                    Add Activity to Wish List
+                </button>
+                <button
+                    onClick={handleEditClick}
+                    class="bg-yellow-500 hover:bg-yellow-400 text-white font-bold py-2 px-4 border-b-4 border-yellow-700 hover:border-yellow-500 rounded w-full"
+                >
+                    Edit Activity Card
+                </button>
+                <button
+                    onClick={handleDeleteClick}
+                    class="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded w-full"
+                >
+                    Delete Activity
+                </button>
             </div>
         </div>
-    )
+    </div>
+)
 }
 
 export default ActivityCard;

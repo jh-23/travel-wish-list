@@ -27,6 +27,7 @@ function NewActivityForm() {
         .then((activity) => addActivity(activity))
     }
 
+    console.log(activityDescription);
 
     return(
         <div className='new-activity-form' class="bg-cover bg-center h-screen" style={{ backgroundImage: "url(https://i0.wp.com/thewildwayfarer.com/wp-content/uploads/2017/02/travel-wishlist.jpg?fit=3343%2C3285&ssl=1)" }}>
@@ -39,15 +40,15 @@ function NewActivityForm() {
                 <br />
                 <h4 class="text-2xl font-bold text-yellow-500"> Create Activity Here: </h4>
                 <br />
-                <label class="text-xl font-bold text-blue-500">Activity Name: </label>
+                <label class="text-xl font-bold text-blue-800">Activity Name: </label>
                 <input type="text" name="activity-name" placeholder="Activity Name" value={activityName} onChange={(e) => setActivityName(e.target.value)} />
                 <br />
                 <br />
-                <label class="text-xl font-bold text-blue-500">Activity Description: </label>
+                <label class="text-xl font-bold text-blue-800">Activity Description: </label>
                 <input type="text" name="activity-description" placeholder="Activity Description" value={activityDescription} onChange={(e) => setActivityDescription(e.target.value)} />
                 <br />
                 <br />
-                <label class="text-xl font-bold text-blue-500">Activity Image URL: </label>
+                <label class="text-xl font-bold text-blue-800">Activity Image URL: </label>
                 <input type="text" name="image" placeholder="Activity Image URL" value={activityImage} onChange={(e) => setActivityImage(e.target.value)} />
                 <br />
                 <br />

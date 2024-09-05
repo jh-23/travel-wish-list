@@ -1,55 +1,101 @@
 import { NavLink } from 'react-router-dom';
-import "./NavBar.css"
 
 function NavBar() {
-
-
-    return(
-        <div>
-            <header>
-                <nav>
-                    <NavLink
-                    to="/home"
-                    className='nav-link'
-                    >
-                    Home
-                    </NavLink>
-                    <NavLink
-                    to="/destinations"
-                    className='nav-link'
-                    >
-                    All Destinations
-                    </NavLink>
-                    <NavLink
-                    to="/newdestinationform"
-                    className="nav-link">
-                    Create Destination
-                    </NavLink>
-                    <NavLink
-                    to="/newactivityform"
-                    className="nav-link">
-                    Create Activity
-                    </NavLink>
-                    <NavLink
-                    to="/createactivitydestination"
-                    className="nav-link">
-                    Create Activity Destination
-                    </NavLink>
-                    <NavLink
-                    to="/addtowishlist"
-                    className="nav-link">
-                    Travel Wish List 
-                    </NavLink>
-                    <NavLink
-                    to="/logout"
-                    className="nav-link">
-                    Logout
-                    </NavLink>
-                </nav>
-            </header>
-        </div>
-    )
-
+  return (
+    <div>
+      <header className="bg-gradient-to-r from-blue-600 to-indigo-500 shadow-lg">
+        <nav className="container mx-auto flex justify-between items-center p-6">
+          <div className="text-white text-3xl font-bold">Travel Wish List</div>
+          <ul className="flex space-x-6">
+            <li>
+              <NavLink
+                to="/home"
+                className={({ isActive }) =>
+                  isActive
+                    ? 'text-white border-b-2 border-white pb-1'
+                    : 'text-gray-200 hover:text-white transition duration-300'
+                }
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/destinations"
+                className={({ isActive }) =>
+                  isActive
+                    ? 'text-white border-b-2 border-white pb-1'
+                    : 'text-gray-200 hover:text-white transition duration-300'
+                }
+              >
+                All Destinations
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/newdestinationform"
+                className={({ isActive }) =>
+                  isActive
+                    ? 'text-white border-b-2 border-white pb-1'
+                    : 'text-gray-200 hover:text-white transition duration-300'
+                }
+              >
+                Create Destination
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/newactivityform"
+                className={({ isActive }) =>
+                  isActive
+                    ? 'text-white border-b-2 border-white pb-1'
+                    : 'text-gray-200 hover:text-white transition duration-300'
+                }
+              >
+                Create Activity
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/createactivitydestination"
+                className={({ isActive }) =>
+                  isActive
+                    ? 'text-white border-b-2 border-white pb-1'
+                    : 'text-gray-200 hover:text-white transition duration-300'
+                }
+              >
+                Create Activity Destination
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/addtowishlist"
+                className={({ isActive }) =>
+                  isActive
+                    ? 'text-white border-b-2 border-white pb-1'
+                    : 'text-gray-200 hover:text-white transition duration-300'
+                }
+              >
+                Travel Wish List
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/logout"
+                className={({ isActive }) =>
+                  isActive
+                    ? 'text-white border-b-2 border-white pb-1'
+                    : 'text-gray-200 hover:text-white transition duration-300'
+                }
+              >
+                Logout
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+  );
 }
 
 export default NavBar;

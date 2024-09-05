@@ -85,12 +85,20 @@ if __name__ == '__main__':
             image="https://www.travelandleisure.com/thmb/2dm9PhvurpcG5g3D2r1Heq0wUsc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/melbourne-australia-MELBOURNETG0721-62ff9ae2570945ec80160ddf46ee7cb1.jpg"
         ))
         
+        destination_7 = (Destination(
+            city="Barcelona",
+            state="N/A",
+            country="Spain",
+            image="https://www.spain.info/.content/imagenes/cabeceras-grandes/cataluna/park-guell-barcelona-s-305364611.jpg"
+        ))
+        
         destinations_to_add.append(destination_1)
         destinations_to_add.append(destination_2)
         destinations_to_add.append(destination_3)
         destinations_to_add.append(destination_4)
         destinations_to_add.append(destination_5)
         destinations_to_add.append(destination_6)
+        destinations_to_add.append(destination_7)
         db.session.add_all(destinations_to_add)
         
         #activity_Destinations
@@ -202,6 +210,16 @@ if __name__ == '__main__':
             activity_id = 21
         ))
         
+        activity_destination_22 = (ActivityDestination(
+            destination_id = 7,
+            activity_id = 22
+        ))
+        
+        activity_destination_23 = (ActivityDestination(
+            destination_id = 7,
+            activity_id=23
+        ))
+        
         activity_destinations_to_add.append(activity_destination_1)
         activity_destinations_to_add.append(activity_destination_2)
         activity_destinations_to_add.append(activity_destination_3)
@@ -223,6 +241,8 @@ if __name__ == '__main__':
         activity_destinations_to_add.append(activity_destination_19)
         activity_destinations_to_add.append(activity_destination_20)
         activity_destinations_to_add.append(activity_destination_21)
+        activity_destinations_to_add.append(activity_destination_22)
+        activity_destinations_to_add.append(activity_destination_23)
         db.session.add_all(activity_destinations_to_add)
         
         # Activities
@@ -354,6 +374,18 @@ if __name__ == '__main__':
             activity_description = "Experience an African adventure just 30 minutes from Melbourne. You'll find an amazing array of animals living on 225 hectares of wide, open savannah. On the Pula Reserve Walking Trail, come face-to-face with amazing gorillas, a pride of lions, see monkeys and cheetahs at play and feel the sand between your toes at the new Hippo Beach! Included in your admission price is a 40 minute safari tour where you will find rhinoceros, giraffes, zebras and antelopes grazing together on the picturesque savannah. Experience Slumber Safari, where you stay overnight in our luxury safari tents overlooking the savannah. Your stay includes amazing close-up animal encounters, drinks and dips at sunset, and a sumptuous African feast!",
             activity_image = "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/a6/8a/24/dsc01319-largejpg.jpg?w=800&h=500&s=1"
         ))
+        
+        activity_22 = (Activity(
+            activity_name = "Casa Batlló",
+            activity_description="Casa Batlló is a building in the center of Barcelona, Spain. It was designed by Antoni Gaudí, and is considered one of his masterpieces. A remodel of a previously built house, it was redesigned in 1904 by Gaudí and has been refurbished several times.",
+            activity_image="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Casa_Batllo_Overview_Barcelona_Spain_cut.jpg/1280px-Casa_Batllo_Overview_Barcelona_Spain_cut.jpg"
+        ))
+        
+        activity_23 = (Activity(
+            activity_name = "Basílica de la Sagrada Familia",
+            activity_description="Basilica de la Sagrada Familia is a church devoted to the Holy Family. One of Antoni Gaudi’s most famous works, the church is perhaps best known for still being under construction since 1882—with works funded purely by donations. Take a lift to the top of the towers for a panoramic view of the city and marvel at the ornate architecture.",
+            activity_image = "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/56/2a/e7/hay-construcciones-monumentale.jpg?w=1100&h=600&s=1"
+        ))
     
         activities_to_add.append(activity_1)
         activities_to_add.append(activity_2)
@@ -376,6 +408,7 @@ if __name__ == '__main__':
         activities_to_add.append(activity_19)
         activities_to_add.append(activity_20)
         activities_to_add.append(activity_21)
+        activities_to_add.append(activity_22)
         db.session.add_all(activities_to_add)
         
         db.session.commit()

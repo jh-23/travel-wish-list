@@ -50,7 +50,7 @@ const routes = [
             {
                 path: "/createactivitydestination",
                 element: <CreateActivityDestination />
-            },
+            }
         ],
     },
     {   path:"/login",

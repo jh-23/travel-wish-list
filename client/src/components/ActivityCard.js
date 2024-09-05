@@ -2,7 +2,7 @@ import React, { useContext} from 'react';
 import { Context } from './Context';
 import { useNavigate } from 'react-router-dom';
 
-function ActivityCard({ activity }) {
+function ActivityCard({ activity, destination }) {
 
     const { destinationId, user, addActivityToWishList, currActivity, setCurrActivity, handleDeleteActivity } = useContext(Context)
 
@@ -66,7 +66,7 @@ function ActivityCard({ activity }) {
                 </button>
                 <button
                     onClick={handleDeleteClick}
-                    class="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded w-full"
+                    class="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b- border-red-700 hover:border-red-500 rounded w-full"
                 >
                     Delete Activity
                 </button>
@@ -77,3 +77,4 @@ function ActivityCard({ activity }) {
 }
 
 export default ActivityCard;
+

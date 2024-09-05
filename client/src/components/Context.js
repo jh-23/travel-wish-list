@@ -33,6 +33,8 @@ function ContextProvider({ children }) {
 
     const [showSignUp, setShowSignUp] = useState(false);
 
+    const [destination, setDestination] = useState(null);
+
 
 
     function addDestination(newDestination) {
@@ -68,7 +70,7 @@ function ContextProvider({ children }) {
 
 
     return(
-        <Context.Provider value={{ username, setUsername, password, setPassword, user, setUser, errors, setErrors, isLoading, setIsLoading, destinations, setDestinations, activities, setActivities, city, setCity, state, setState, country, setCountry, image, setImage, addDestination, activityName, setActivityName, activityDescription, setActivityDescription, activityImage, setActivityImage, addActivity, destinationId, setDestinationId, addActivityToWishList, activityWishList, setActivityWishList, isEditing, setIsEditing, handleUpdateActivity, currActivity, setCurrActivity, handleDeleteActivity, selectedActivity, setSelectedActivity, selectedDestination, setSelectedDestination, message, setMessage, showSignUp, setShowSignUp  }}>
+        <Context.Provider value={{ username, setUsername, password, setPassword, user, setUser, errors, setErrors, isLoading, setIsLoading, destinations, setDestinations, activities, setActivities, city, setCity, state, setState, country, setCountry, image, setImage, addDestination, activityName, setActivityName, activityDescription, setActivityDescription, activityImage, setActivityImage, addActivity, destinationId, setDestinationId, addActivityToWishList, activityWishList, setActivityWishList, isEditing, setIsEditing, handleUpdateActivity, currActivity, setCurrActivity, handleDeleteActivity, selectedActivity, setSelectedActivity, selectedDestination, setSelectedDestination, message, setMessage, showSignUp, setShowSignUp, destination, setDestination  }}>
             {children}
         </Context.Provider>
     )

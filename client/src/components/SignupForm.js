@@ -34,23 +34,31 @@ const  SignupForm = () => {
                 },
                 body: JSON.stringify(values, null, 2),
             }).then((r) => {
-                if (r.status === 201) {
-                    console.log(user)
-                    setUser(r)
-                    navigate('/home')
+                if (r.ok) {
+                    return r.json()
+                } else {
+                    throw new Error('Sign up failed')
                 }
             })
+                .then((user) => {
+                    setUser(user);
+                    navigate('/home')
+                })
+                .catch((error) => {
+                    console.error('Error signinup up:', error)
+                })
+                .finally(() => {
+                    setIsLoading(false);
+                })
         }
     })
 
 
-    console.log(user);
-
     return (
         <div class="bg-cover bg-center h-screen" style={{ backgroundImage: "url('https://wallpapers.com/images/hd/plane-desktop-yms31u8wyuke7ari.jpg')" }}>
-            <h2 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-3xl dark:text-white">Sign up here to create a Travel Wish List Account: </h2>
+            <h2 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-3xl text-white">Sign up here to create a Travel Wish List Account: </h2>
             <form onSubmit={formik.handleSubmit} style={{ margin: "30px"}}>
-                <label class="text-neutral-600 text-base font-normal">Username:</label>
+                <label class="text-neutral-600 text-base font-normal text-white">Username:</label>
                 <br />
                 <input
                     id="username"
@@ -63,7 +71,7 @@ const  SignupForm = () => {
                 </input>
                 <p style={{ color: "red" }}> {formik.errors.username}</p>
                 <br />
-                <label htmlFor='password' class="text-neutral-600 text-base font-normal">Password:</label>
+                <label htmlFor='password' class="text-neutral-600 text-base font-normal text-white">Password:</label>
                 <br />
                 <input
                     id="password"

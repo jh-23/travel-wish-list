@@ -44,12 +44,13 @@ function LoginForm() {
 
             <br />
             <form onSubmit={handleSubmit}>
-            <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Welcome to the Travel Wish List App!</h1>
-            <h4 class="text-2xl font-bold dark:text-white">Please sign in to view travel information: </h4>
+            <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl dark:text-white">Welcome to the Travel Wish List App!</h1>
+            <h4 class="text-2xl font-bold text-white">Please sign in to view travel information: </h4>
                 <div>
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Username: </label>
+                    <br />
+                    <label class="block text-white text-sm font-bold mb-2" for="username">Username: </label>
                     <Input
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-400 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    class="bg-gray-50 border border-gray-300 text-red text-sm rounded-lg focus:ring-blue-400 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     type='text'
                     id='username'
                     autoComplete='off'
@@ -59,7 +60,7 @@ function LoginForm() {
                 </div>
                 <br />
                 <div>
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Password: </label>
+                    <label class="block text-white text-sm font-bold mb-2" for="username">Password: </label>
                     <Input
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-400 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     type='password'
@@ -80,7 +81,7 @@ function LoginForm() {
                 <br />
                 <br />
                 <br />
-                <h4 class="text-2xl font-bold dark:text-white">Don't have a Travel Wish List account?   Sign Up Here:</h4>
+                <h4 class="text-2xl font-bold text-white">Don't have a Travel Wish List account?   Sign Up Here:</h4>
             </form>
 
             <Link to="/signupform">

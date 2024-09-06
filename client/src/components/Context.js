@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, useEffect, createContext } from 'react';
 const Context = createContext()
 
 function ContextProvider({ children }) {
@@ -35,6 +35,25 @@ function ContextProvider({ children }) {
 
     const [destination, setDestination] = useState(null);
 
+    useEffect(() => {
+        fetch("/check_session")
+            .then((r) => {
+                if (r.ok) {
+                    r.json().then((user) => {
+                        setUser(user);
+                        setIsLoading(false);
+                    });
+                } else {
+                    setUser(null);
+                    setIsLoading(false);
+                }
+            })
+            .catch((error) => {
+                console.error('Error fetching user session:', error);
+                setUser(null);
+                setIsLoading(false);
+            });
+    }, []);
 
 
     function addDestination(newDestination) {

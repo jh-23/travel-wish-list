@@ -42,6 +42,7 @@ function WishList() {
         return acc;
     }, {});
 
+    console.log(user)
 
     return (
         <div>

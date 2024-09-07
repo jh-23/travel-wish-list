@@ -54,19 +54,22 @@ function ActivityCard({ activity, destination }) {
             <div class="space-y-2">
                 <button
                     onClick={handleClick}
-                    class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-full"
+                    class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 
+                    hover:border-blue-500 rounded w-full"
                 >
                     Add Activity to Wish List
                 </button>
                 <button
                     onClick={handleEditClick}
-                    class="bg-yellow-500 hover:bg-yellow-400 text-white font-bold py-2 px-4 border-b-4 border-yellow-700 hover:border-yellow-500 rounded w-full"
+                    class="bg-yellow-500 hover:bg-yellow-400 text-white font-bold py-2 px-4 border-b-4 border-yellow-700 
+                    hover:border-yellow-500 rounded w-full"
                 >
                     Edit Activity Card
                 </button>
                 <button
                     onClick={handleDeleteClick}
-                    class="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b- border-red-700 hover:border-red-500 rounded w-full"
+                    class="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b- border-red-700 
+                    hover:border-red-500 rounded w-full"
                 >
                     Delete Activity
                 </button>

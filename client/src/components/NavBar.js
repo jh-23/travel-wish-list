@@ -5,7 +5,7 @@ function NavBar() {
     <div>
       <header className="bg-gradient-to-r from-blue-600 to-indigo-500 shadow-lg">
         <nav className="container mx-auto flex justify-between items-center p-6">
-          <div className="text-white text-3xl font-bold">Travel Wish List</div>
+          <div className="text-white text-3xl font-bold">Travel Wish List App</div>
           <ul className="flex space-x-6">
             <li>
               <NavLink

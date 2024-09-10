@@ -31,8 +31,6 @@ function WishList() {
     console.log(activityWishList)
     
 
-
-    // Group activities by destination
     const groupedActivities = activityWishList.reduce((acc, item) => {
         const destinationName = `${item.destination.city}, ${item.destination.country}`;
         if (!acc[destinationName]) {

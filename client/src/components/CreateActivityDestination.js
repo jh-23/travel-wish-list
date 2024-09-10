@@ -71,7 +71,7 @@ function CreateActivityDestination() {
                 <br />
                 <br />
                 <div>
-                    <label htmlFor="destination" class="text-xl font-extrabold text-white">Select Destination:       </label>
+                    <label class="text-xl font-extrabold text-white">Select Destination:       </label>
                     <select name="destination" class="w-600 border-gray- px-3 py-2 rounded-log shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
                         id="destination"
                         value={selectedDestination}

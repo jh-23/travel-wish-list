@@ -79,15 +79,7 @@ class ActivityDestination(db.Model, SerializerMixin):
     # relationship method maps the ActivityDestination to the User
     user = db.relationship('User', back_populates='activity_destinations')
     
-    # route with session with user.  create a list of objects of activity_destinations
         
-    # def to_dict(self):
-    #     return {
-    #         'id': self.id,
-    #         'destination_id': self.destination_id,
-    #         'activity_id': self.activity_id,
-    #         'user_id': self.user_id,
-    #     }
     
 class Activity(db.Model, SerializerMixin):
     
